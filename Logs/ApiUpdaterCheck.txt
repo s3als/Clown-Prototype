@@ -1,0 +1,60 @@
+[api-updater (non-obsolete-error-filter)] 9/15/2022 5:56:23 PM : Starting D:/Gamedev/Unity Files/Versions/2020.3.11f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] 
+----------------------------------
+jit/startup time      : 701.5566ms
+moved types parse time: 45ms
+candidates parse time : 1ms
+C# parse time         : 526ms
+candidates check time : 37ms
+console write time    : 0ms
+
+[api-updater (non-obsolete-error-filter)] 9/23/2022 11:22:49 AM : Starting D:/Gamedev/Unity Files/Versions/2020.3.11f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] 
+----------------------------------
+jit/startup time      : 672.6656ms
+moved types parse time: 42ms
+candidates parse time : 0ms
+C# parse time         : 519ms
+candidates check time : 48ms
+console write time    : 0ms
+
+[api-updater (non-obsolete-error-filter)] 9/23/2022 11:41:42 AM : Starting D:/Gamedev/Unity Files/Versions/2020.3.11f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] 
+----------------------------------
+jit/startup time      : 49.4027ms
+moved types parse time: 40ms
+candidates parse time : 0ms
+C# parse time         : 174ms
+candidates check time : 32ms
+console write time    : 0ms
+
+[api-updater (non-obsolete-error-filter)] 9/23/2022 3:17:48 PM : Starting D:/Gamedev/Unity Files/Versions/2020.3.11f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] 
+----------------------------------
+jit/startup time      : 637.8791ms
+moved types parse time: 39ms
+candidates parse time : 0ms
+C# parse time         : 533ms
+candidates check time : 30ms
+console write time    : 0ms
+
+[api-updater (non-obsolete-error-filter)] 9/23/2022 3:18:02 PM : Starting D:/Gamedev/Unity Files/Versions/2020.3.11f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] 
+----------------------------------
+jit/startup time      : 48.0103ms
+moved types parse time: 39ms
+candidates parse time : 1ms
+C# parse time         : 182ms
+candidates check time : 27ms
+console write time    : 0ms
+
+[api-updater (non-obsolete-error-filter)] 9/23/2022 3:30:13 PM : Starting D:/Gamedev/Unity Files/Versions/2020.3.11f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] 
+----------------------------------
+jit/startup time      : 52.5159ms
+moved types parse time: 38ms
+candidates parse time : 0ms
+C# parse time         : 174ms
+candidates check time : 27ms
+console write time    : 0ms
+
