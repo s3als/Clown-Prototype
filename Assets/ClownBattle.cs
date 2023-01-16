@@ -111,6 +111,10 @@ public class ClownBattle : MonoBehaviour
     
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Home))
+        {
+            performance.DebugReadoutSetups();
+        }
         if (performance.IsNextAlert())
         {
             SetContinuePrompt(true);
@@ -180,6 +184,7 @@ public class ClownBattle : MonoBehaviour
                 waitForInput = true;
             }
         }
+
     }
     
     string GetInput()
@@ -281,6 +286,21 @@ public class Performance
     public List<string> alerts;
     int alertIndex = -1;
 
+    public void DebugReadoutSetups()
+    {
+        Debug.Log("int Setups: " + setups);
+        Debug.Log("types: ");
+        foreach(HT type in setupTypes)
+        {
+            Debug.Log(type);
+        }
+        Debug.Log("durations: ");
+        foreach(int duration in setupDurations)
+        {
+            Debug.Log(duration);
+        }
+    }
+
     public Performance(List<Clown> performers, List<AudienceMember> audience, int rounds)
     {
         alerts = new List<string>();
@@ -310,15 +330,21 @@ public class Performance
         if(setups == 3)
         {
             int index = Random.Range(0, 2);
+            //Alert("New setup overrides current " + setupTypes[index] + " " + setupDurations[index] + " setup -  now " + setup.type + " " + setup.time);
             setupTypes[index] = setup.type;
             setupDurations[index] = setup.time;
+            return;
         }
-        setupTypes[setups] = setup.type;
-        setupDurations[setups] = setup.time;
-        setups++;
-        //Alert("Added a new Setup.");
-        //performanceText = "Added setup " + setup.type.ToString() + " with timer " + setup.time;
-        //Debug.Log("Added setup " + setup.type.ToString() + " with timer " + setup.time);
+        for(int i = 0; i < 3; i++)
+        {
+            if(setupTypes[i] == HT.none)
+            {
+                setupTypes[i] = setup.type;
+                setupDurations[i] = setup.time;
+                setups++;
+                return;
+            }
+        }
     }
 
     //Advances the turn, advances round if all turns spent. 
@@ -347,6 +373,13 @@ public class Performance
                 if (setupTypes[i] != HT.none)
                 {
                     setupDurations[i]--;
+                    if(setupDurations[i] < 0)
+                    {
+                        Alert("Missed " + setupTypes[i] + " payoff...");
+                        setupDurations[i] = 0;
+                        setupTypes[i] = HT.none;
+                        setups--;
+                    }
                 }
             }
         }
@@ -364,7 +397,7 @@ public class Performance
         else if (distance == 2) { result = payoffPotency / 4; }
         else result = 0;
         AffectAudience(setupTypes[setupIndex], result);
-        setupDurations[setupIndex] = -1;
+        setupDurations[setupIndex] = 0;
         setupTypes[setupIndex] = HT.none;
         setups--;
     }
@@ -500,7 +533,7 @@ public class Performance
     public string PullNextAlert()
     {
         alertIndex++;
-        Debug.Log("pulled alert " + alertIndex);
+        //Debug.Log("pulled alert " + alertIndex);
         return alerts[alertIndex];
     }
 }
